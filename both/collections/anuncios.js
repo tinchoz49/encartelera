@@ -1,0 +1,1 @@
+Anuncios = new Meteor.Collection('anuncios');

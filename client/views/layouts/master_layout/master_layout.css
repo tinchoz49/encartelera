@@ -1,0 +1,21 @@
+
+
+#login-dropdown-list.open > a, #login-dropdown-list.open > a:hover,#login-dropdown-list.open > a:focus {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+#login-dropdown-list .dropdown-menu {
+  background-color: #222222 !important;
+  margin-top: 10px !important;
+}
+
+#login-other-options a {
+  color: #999;
+}
+
+#login-other-options a:hover,
+#login-other-options a:focus {
+  color: #fff;
+  background-color: transparent;
+}

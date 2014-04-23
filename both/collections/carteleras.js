@@ -1,0 +1,1 @@
+Carteleras = new Meteor.Collection('carteleras');
