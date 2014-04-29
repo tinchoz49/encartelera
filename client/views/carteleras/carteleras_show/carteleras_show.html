@@ -1,0 +1,50 @@
+<template name="CartelerasShow">
+<div class="row">
+  <br>
+  {{#own}}
+    <div class="col-lg-6 col-lg-offset-3">
+      <div class="input-group">
+        <input type="text" id="titulo" name="titulo" class="form-control" value="{{titulo}}" />
+        <span class="input-group-btn">
+          <button id="btnGuardarCartelera" class="btn btn-default" type="button">Guardar</button>
+          {{#if _id}}
+            <a href="{{pathFor 'anuncios.new' cartelera_id=_id}}" class="btn btn-default" type="button">Crear anuncio</a>
+          {{/if}}
+        </span>
+      </div><!-- /input-group -->
+    </div>
+  {{else}}
+    <h1 class="centered">Anuncios en: {{titulo}}</h1>
+    <hr>
+  {{/own}}
+  <br>
+  <br>
+  <div class="col-lg-12">
+    <div class="row">
+      {{#each anuncios}}
+        <div class="col-lg-6">
+          <div class="blog-content anuncio">
+            <h2>{{titulo}}</h2>
+            <div class="blog-contenido">
+              {{{short contenido}}}
+            </div>
+            <div class="more">...</div>
+            <br/>
+            <a href="{{pathFor 'anuncios.show'}}" style="margin-bottom: 10px;">
+            {{#own}}
+              <i class="glyphicon glyphicon-edit"></i> Editar
+            {{else}}
+              <i class="glyphicon glyphicon-eye"></i> Leer mas
+            {{/own}}
+            </a>
+            <br/>
+          </div>
+        </div>
+      {{else}}
+        <h2>Sin anuncios aun.</h2>
+      {{/each}}
+    </div>
+  </div>
+  
+</div>
+</template>

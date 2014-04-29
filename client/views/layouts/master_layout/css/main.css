@@ -272,12 +272,11 @@ a:after {
 
 #headerwrap {
 	background: url(../img/header_bg.jpg) no-repeat center top;
-	margin-top: -50px;
-	padding-top:120px;
+	padding-top:60px;
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 650px;
+	min-height: 400px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -293,8 +292,6 @@ a:after {
 
 #headerwrap h1 {
 	color:#ffffff;
-	margin-top: 90px;
-	padding-bottom: 30px;
 	letter-spacing: 8px;
 	font-size: 100px;
 	font-weight: bold;
@@ -591,7 +588,7 @@ a:after {
 	background: #2b2b2b;
 	padding-right: 0px;
 	padding-left: 0px;
-	
+	margin-top: 10px;
 }
 
 .blog-bg h4 {
@@ -606,6 +603,7 @@ a:after {
 
 .blog-content {
 	padding-top: 10px;
+    height: 350px;
 	background: #f2f2f2;
 }
 

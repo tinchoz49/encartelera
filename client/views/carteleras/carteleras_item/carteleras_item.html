@@ -1,0 +1,42 @@
+<template name="CartelerasItem">
+  <li>
+    <div class="blog-bg col-lg-6">
+      <div class="col-lg-4 centered">
+        <h4>{{titulo}}</h4>
+        <div style="background: white;" class="qrcode"></div>
+        <h4>{{autor.username}}</h4>
+        <h5>Actualizado {{formatDate updated_at}}</h5>
+        
+        {{#own}}
+          <p>
+            <a href="{{pathFor 'carteleras.show'}}"><i class="glyphicon glyphicon-edit"></i> Editar cartelera</a>
+            <br/>
+            <a href="#" class="btnDeleteCartelera"><i class="glyphicon glyphicon-remove"></i> Eliminar cartelera</a>
+          </p>
+        {{else}}
+          <p><a href="{{pathFor 'carteleras.show'}}" class="icon icon-eye"> Ver anuncios</a></p>
+        {{/own}}
+      </div>
+      <div class="col-lg-8 blog-content">
+        {{#with ultimoAnuncio}}
+          <h2>{{titulo}}</h2>
+          <div class="blog-contenido">
+            {{{short contenido}}}
+          </div>
+          <div class="more">...</div>
+          <br/>
+          <a href="{{pathFor 'anuncios.show'}}">
+            {{#own}}
+              <i class="glyphicon glyphicon-edit"></i> Editar
+            {{else}}
+              <i class="glyphicon glyphicon-eye"></i> Leer mas
+            {{/own}}
+          </a>
+          <br>
+        {{else}}
+          <h2>Sin anuncios aun.</h2>
+        {{/with}}
+      </div>
+    </div>
+  </li>
+</template>

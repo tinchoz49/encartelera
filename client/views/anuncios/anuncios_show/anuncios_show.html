@@ -1,0 +1,37 @@
+<template name="AnunciosShow">
+<div class="row">
+  <br>
+  {{#own}}
+    <div class="col-lg-6 col-lg-offset-3">
+      <div class="input-group">
+        <input type="text" id="titulo" name="titulo" class="form-control" value="{{titulo}}" />
+        <span class="input-group-btn">
+          <button id="btnGuardarAnuncio" class="btn btn-default" type="button">Guardar</button>
+          {{#if _id}}
+            <button id="btnDeleteAnuncio" class="btn btn-danger" type="button">Eliminar</button>
+          {{/if}}
+        </span>
+      </div><!-- /input-group -->
+    </div>
+    <br/>
+  {{else}}
+    <h1 class="centered">{{titulo}} <small>{{cartelera.titulo}}</small></h1>
+    <hr>
+  {{/own}}
+  <div class="row">
+    <div class="text-right">
+      Ultima actualizacion {{formatDate updated_at}}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      {{#own}}
+        {{> textarea}}
+      {{else}}
+        {{{contenido}}}
+      {{/own}}
+    </div>
+  </div>
+</div>
+</template>

@@ -10,7 +10,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#home" class="smoothScroll">Home</a></li>
+            <li><a href="/" class="smoothScroll">Principal</a></li>
+            {{#if currentUser}}
+              <li><a href="{{pathFor 'carteleras.new'}}" class="smoothScroll">Crear nueva cartelera</a></li>
+              <li><a href="{{pathFor 'carteleras.user'}}" class="smoothScroll">Mis carteleras</a></li>
+            {{/if}}
           </ul>
           <ul class="nav navbar-nav navbar-right">
             {{> loginButtons }}

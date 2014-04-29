@@ -1,0 +1,14 @@
+<template name="Index">
+<div class="row">
+  <br>
+  <h1 class="centered">Carteleras</h1>
+  <hr>
+  <br>
+  <br>
+  <ul class="list-unstyled">
+    {{#each carteleras}}
+      {{> CartelerasItem}}
+    {{/each}}
+  </ul>
+</div>
+</template>

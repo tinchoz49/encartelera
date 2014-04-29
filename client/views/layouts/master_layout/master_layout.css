@@ -1,4 +1,6 @@
-
+html,body{
+  height:100%;
+}
 
 #login-dropdown-list.open > a, #login-dropdown-list.open > a:hover,#login-dropdown-list.open > a:focus {
   color: #fff !important;
@@ -18,4 +20,52 @@
 #login-other-options a:focus {
   color: #fff;
   background-color: transparent;
+}
+
+.blog-contenido {
+  height: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qrcode {
+  background: white;
+  padding-top: 5px;
+}
+
+.anuncio {
+  margin: 10px;
+  padding: 10px;
+}
+
+#filter{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#page-wrap{
+margin: auto;
+height: auto;
+min-height:100%;
+margin-bottom: 110px;
+}
+ 
+#page-wrap:after{
+display:block;
+clear:both;
+}
+ 
+#footer {
+  background: #121212;
+  color: #999;
+  margin-top: -6em;
+  height: 6em;
+  padding: 0;
+  clear: both;
+}
+
+.more {
+  width: 100%;
+  text-align: center;
 }

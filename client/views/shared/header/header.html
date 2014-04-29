@@ -1,0 +1,17 @@
+<template name="Header">
+<div id="headerwrap">
+  <header class="clearfix">
+    <h1><span class="icon icon-shield"></span></h1>
+    <p>EnCartelera</p>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <div class="form-group {{#if filter}}has-success has-feedback{{/if}}">
+        <input type="text" id="filter" name="filter" placeholder="Buscar por..." value="{{filter}}" class="form-control ">
+        {{#if filter}}
+          <span class="glyphicon glyphicon-ok form-control-feedback" style="top: 0px;"></span>
+        {{/if}}
+      </div>
+    </div>
+  </header>
+</div>
+</template>
