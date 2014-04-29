@@ -18,6 +18,7 @@ Template.AnunciosShow.destroyed = function () {
 
 Template.textarea.rendered = function () {
   this.$('.wysihtml5').wysihtml5();
+  
 };
 
 Template.AnunciosShow.events({
