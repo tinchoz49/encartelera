@@ -2,16 +2,16 @@
 /* Index: Event Handlers and Helpers */
 /*****************************************************************************/
 Template.Index.events({
-  /*
-   * Example: 
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+  'click #masCarteleras' : function (e, tmpl){
+    e.preventDefault();
+    Session.set('limit_carteleras', Session.get('limit_carteleras') + ITEMS_CARTELERAS_INCREMENT);
+  }
 });
 
 Template.Index.helpers({
-
+  "quedanCarteleras" : function (){
+    return (Counts.findOne("carteleras") && Session.get('limit_carteleras') < Counts.findOne("carteleras").count) ? "display: auto;" : "display: none;";
+  }
 });
 
 /*****************************************************************************/
@@ -22,8 +22,6 @@ Template.Index.created = function () {
 
 Template.Index.rendered = function () {
   // run the above func every time the user scrolls
-  $(window).unbind('scroll');
-  $(window).scroll(showMoreCarteleras);
 };
 
 Template.Index.destroyed = function () {

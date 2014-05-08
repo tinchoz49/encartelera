@@ -25,12 +25,10 @@ Anuncios.allow({
 
 Anuncios.deny({
   insert: function (userId, doc) {
-    doc.updated_at = new Date().getTime(); 
     return false;
   },
 
   update: function (userId, doc, fieldNames, modifier) {
-    doc.updated_at = new Date().getTime();
     return false;
   },
 
@@ -42,14 +40,14 @@ Anuncios.deny({
 
 Meteor.methods({
   "crudAnuncio": function(attributes) {
-    var anuncio;
+    attributes.updatedAt = new Date().getTime();
     if (attributes._id){
       var anuncios = Anuncios.findOne(attributes._id);
-      anuncio = _.pick(attributes, 'titulo', 'contenido');
+      anuncio = _.pick(attributes, 'titulo', 'contenido', 'updatedAt');
       Anuncios.update( attributes._id, {$set: anuncio});
       return attributes._id;
     }else{
-      anuncio = _.pick(attributes, 'titulo', 'contenido', 'cartelera_id');
+      anuncio = _.pick(attributes, 'titulo', 'contenido', 'cartelera_id', 'updatedAt');
       return Anuncios.insert(anuncio);
     }
   },

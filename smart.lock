@@ -8,7 +8,8 @@
       "accounts-ui-bootstrap-3": {},
       "bootstrap-wysiwyg": {},
       "bootstrap3-wysihtml5": {},
-      "jquery-qrcode": {}
+      "jquery-qrcode": {},
+      "fast-render": {}
     },
     "packages": {
       "iron-router": {
@@ -45,6 +46,11 @@
         "git": "https://github.com/EtherPOS/meteor-jquery-qrcode",
         "tag": "v0.2.0",
         "commit": "a6c95eeaa5d8f5d0163c052b1fb845e56d1f913c"
+      },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.2.5",
+        "commit": "93e2fb334e55fbe9b5ebb2a2e65964018658f43e"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

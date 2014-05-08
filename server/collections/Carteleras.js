@@ -21,13 +21,11 @@ Carteleras.allow({
 });
 
 Carteleras.deny({
-  insert: function (userId, doc) {
-    doc.updated_at = new Date().getTime(); 
+  insert: function (userId, doc) { 
     return false;
   },
 
   update: function (userId, doc, fieldNames, modifier) {
-    doc.updated_at = new Date().getTime();
     return false;
   },
 
@@ -39,14 +37,15 @@ Carteleras.deny({
 
 Meteor.methods({
   "crudCartelera": function(attributes) {
+    attributes.updatedAt = new Date().getTime();
     if (attributes._id){
       var cartelera = Carteleras.findOne(attributes._id);
-      cartelera = _.extend(_.pick(attributes, 'titulo'));
+      cartelera = _.extend(_.pick(attributes, 'titulo', 'updatedAt'));
       Carteleras.update( attributes._id, {$set: cartelera});
       return attributes._id;
     }else{
 
-      var cartelera = _.extend(_.pick(attributes, 'titulo'), {
+      var cartelera = _.extend(_.pick(attributes, 'titulo', 'updatedAt'), {
         userId: Meteor.userId()
       });
       return Carteleras.insert(cartelera);
@@ -61,7 +60,7 @@ Meteor.publish('cartelerasUnAnuncio', function(filter, limit, userId) {
   
   var sub = this, anunciosHandles = [], cartelerasHandle = null;
   function publishAnuncios(cartelera_id) {
-    var anunciosCursor = Anuncios.find({cartelera_id: cartelera_id}, {sort: {updated_at: -1}, limit: 1});
+    var anunciosCursor = Anuncios.find({cartelera_id: cartelera_id}, {sort: {updatedAt: -1}, limit: 1});
     anunciosHandles[cartelera_id] = Meteor.Collection._publishCursor(anunciosCursor, sub, 'anuncios');
   }
 

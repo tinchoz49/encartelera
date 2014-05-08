@@ -6,6 +6,7 @@
     "accounts-ui-bootstrap-3": {},
     "bootstrap-wysiwyg": {},
     "bootstrap3-wysihtml5": {},
-    "jquery-qrcode": {}
+    "jquery-qrcode": {},
+    "fast-render": {}
   }
 }
