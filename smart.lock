@@ -9,7 +9,8 @@
       "bootstrap-wysiwyg": {},
       "bootstrap3-wysihtml5": {},
       "jquery-qrcode": {},
-      "fast-render": {}
+      "fast-render": {},
+      "iron-router-progress": {}
     },
     "packages": {
       "iron-router": {
@@ -51,6 +52,11 @@
         "git": "https://github.com/arunoda/meteor-fast-render.git",
         "tag": "v0.2.5",
         "commit": "93e2fb334e55fbe9b5ebb2a2e65964018658f43e"
+      },
+      "iron-router-progress": {
+        "git": "https://github.com/Multiply/iron-router-progress.git",
+        "tag": "v0.3.1",
+        "commit": "3f7900feb4bb70a1289b39a1fdcd1f438c0335b3"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
