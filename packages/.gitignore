@@ -14,3 +14,11 @@ bootstrap3-wysihtml5
 jquery-qrcode
 fast-render
 iron-router-progress
+/bootstrap-wysiwyg
+/bootstrap3-wysihtml5
+/jquery-qrcode
+/fast-render
+/iron-router-progress
+/iron-layout
+/iron-core
+/iron-dynamic-template
