@@ -82,6 +82,11 @@ Router.map(function () {
     path: '/anuncios/crear/:cartelera_id',
     template: 'AnunciosShow',
     onBeforeAction: requireLogin,
+    waitOn: function() {
+      if (Meteor.isClient){
+        return Meteor.subscribe('cartelerasByIdWithAnuncios', this.params.cartelera_id);
+      }
+    },
     data: function(){
       return {'is_new': true, 'cartelera_id' : this.params.cartelera_id};
     },
